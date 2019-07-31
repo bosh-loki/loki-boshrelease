@@ -39,10 +39,8 @@ Succeeded
 
 ```
 $ git clone https://github.com/bosh-loki/loki-boshrelease.git
-$ wget https://dl.grafana.com/oss/release/grafana-6.2.5.linux-amd64.tar.gz
 
 $ pushd loki-boshrelease \
-    && bosh add-blob ../grafana-6.2.5.linux-amd64.tar.gz grafana/grafana-6.2.5.linux-amd64.tar.gz \
     && bosh create-release --force && bosh upload-release \
     && bosh -d loki deploy manifests/loki.yml \
     && popd
